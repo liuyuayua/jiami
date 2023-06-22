@@ -7,9 +7,9 @@ In this first assignment, we ask you to think about some real-life process or pr
 1. How would you store the data? How large the data is likely to be?
 1. Which insights you might be able to get from this data? Which decisions we would be able to take based on the data?
 
-Try to think about 3 different problems/processes and describe each of the points above for each problem domain.
+  Try to think about 3 different problems/processes and describe each of the points above for each problem domain.
 
-Here are some of the problem domains and problems that can get you started thinking:
+  Here are some of the problem domains and problems that can get you started thinking:
 
 1. How can you use data to improve education process for children in schools?
 1. How can you use data to control vaccination during the pandemic?
