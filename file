@@ -4,7 +4,6 @@ ARG TARGETPLATFORM
 ARG REVISON
 
 WORKDIR /workspace
-
 # copy modules manifests
 COPY go.mod go.mod
 COPY go.sum go.sum
