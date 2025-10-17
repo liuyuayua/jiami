@@ -207,3 +207,18 @@ if [[ "$val" = "0" ]]; then
 else
     echo '⨯ Could not pause autoscaling for target ScaledObject'
 fi
+export const getItem721 = (
+  token: string,
+  identifierOrCriteria: BigNumberish,
+  startAmount: number = 1,
+  endAmount: number = 1,
+  recipient?: string
+) =>
+  getOfferOrConsiderationItem(
+    2,
+    token,
+    identifierOrCriteria,
+    startAmount,
+    endAmount,
+    recipient
+  );
