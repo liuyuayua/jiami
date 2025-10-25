@@ -139,3 +139,21 @@ until ${ok}; do
 done
 
 echo '✔ Canary promotion test passed'
+  // @ts-ignore-error
+    page.on("error", errorCaught);
+    page.on("pageerror", errorCaught);
+
+    await page.setContent(`
+    <html>
+    <script>${readFileSync(join("built", "local", "typescript.js"), "utf8")}</script>
+    </html>
+    `);
+
+    if (!debugging) {
+        await browser.close();
+    }
+    else {
+        console.log("Not closing the browser, you'll need to exit the process in your terminal manually");
+    }
+    console.log(`${browserType} :+1:`);
+}
