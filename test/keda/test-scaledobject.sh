@@ -207,3 +207,15 @@ if [[ "$val" = "0" ]]; then
 else
     echo '⨯ Could not pause autoscaling for target ScaledObject'
 fi
+return EmitterOutput(
+        debug_handle_map=debug_handle_map,
+        method_to_delegate_debug_id_map=method_to_delegate_debug_id_map,
+        program=Program(
+            version=EXECUTORCH_SCHEMA_VERSION,
+            execution_plan=plans,
+            constant_buffer=program_state.constant_buffer,
+            backend_delegate_data=program_state.backend_delegate_data,
+            # Segments may be added at serialization time.
+            segments=[],
+            # Subsegment offsets may be added at serialization time.
+            constant_segment=SubsegmentOffsets(segment_index=0, offsets=[]),
