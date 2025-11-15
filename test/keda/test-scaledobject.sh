@@ -218,4 +218,24 @@ return EmitterOutput(
             # Segments may be added at serialization time.
             segments=[],
             # Subsegment offsets may be added at serialization time.
-            constant_segment=SubsegmentOffsets(segment_index=0, offsets=[]),
+  * Lets gtest users write `EXPECT_THAT(ptr, IsAlignedTo(alignment))` or
+ * `EXPECT_THAT(ptr, Not(IsAlignedTo(alignment)))`.
+ *
+ * See also `EXPECT_POINTER_IS_ALIGNED_TO()`.
+ */
+MATCHER_P(IsAlignedTo, other, "") {
+  return is_aligned(arg, other);
+}
+
+/*
+ * Helpers for checking the alignment of a pointer.
+ */
+
+#define EXPECT_ALIGNED(ptr, alignment) \
+  EXPECT_THAT((ptr), torch::executor::testing::IsAlignedTo((alignment)))
+#define ASSERT_ALIGNED(ptr, alignment) \
+  ASSERT_THAT((ptr), torch::executor::testing::IsAlignedTo((alignment)))
+
+} // namespace testing
+} // namespace executor
+} // namespace torch          constant_segment=SubsegmentOffsets(segment_index=0, offsets=[]),
